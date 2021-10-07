@@ -1,0 +1,15 @@
+package com.project.ifaces;
+
+import java.awt.List;
+
+import com.project.entity.Employee;
+
+public interface CRUDRepository {
+
+	boolean addEmployee(Employee employee);
+	
+	 List getEmployee(String name);
+	
+	boolean getEmployee(Employee employee);
+	
+}

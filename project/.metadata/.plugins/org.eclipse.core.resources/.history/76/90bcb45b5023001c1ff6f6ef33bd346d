@@ -1,0 +1,10 @@
+package com.project.ifaces;
+
+import com.project.entity.Employee;
+
+public interface CRUDRepository {
+
+//	boolean addEmployee(Employee employee);
+	
+}
+boolean getEmployee(Employee employee);

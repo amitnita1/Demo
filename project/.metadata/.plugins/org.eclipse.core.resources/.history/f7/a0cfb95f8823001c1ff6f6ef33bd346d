@@ -1,0 +1,15 @@
+package com.project.exception;
+	
+	public class NameNotFoundException extends Exception {
+	    private String message;
+	    public NameNotFoundException(String message) {
+	        this.message = message;
+	    }
+	 
+	    @Override
+	    public String getMessage() {
+	        return "NameNotFoundException :="+message;
+	    }
+	}
+
+}

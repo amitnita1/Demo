@@ -1,0 +1,15 @@
+package com.project.entity;
+
+import java.time.LocalDate;
+
+public class Student {
+	 private int id;
+     private String firstName;
+     private String lastName;
+     private String address;
+     private String emailAddress;
+     private String phoneNumber;
+     private LocalDate birthDate;
+     private LocalDate weddingAnniversary;
+
+}

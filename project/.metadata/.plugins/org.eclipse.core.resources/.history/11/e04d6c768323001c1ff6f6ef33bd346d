@@ -1,0 +1,87 @@
+package com.project.daos;
+import java.sql.Date;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.time.LocalDate;
+import java.util.List;
+
+import com.project.entity.Employee;
+import com.project.ifaces.CRUDRepository;
+
+public class EmployeeDaosImp implements CRUDRepository {
+
+		
+		private Connection con ;
+	    public EmployeeDaosImp(Connection con){
+	        this.con = con;
+	  
+	}
+
+	@Override
+	public boolean addEmployee(Employee employee) {
+	
+		String sql = "insert into employee values(?,?,?,?,?,?,?,?)";
+		int rowAdded=0;
+         try(PreparedStatement pstmt = con.prepareStatement(sql)){​​​​
+            pstmt.setInt(1,employee.getId());
+            pstmt.setString(2,employee.getFirstName());
+            pstmt.setString(3,employee.getLastName());
+            pstmt.setString(4,employee.getAddress());
+            pstmt.setString(5,employee.getEmailAddress());
+            pstmt.setString(6,employee.getPhoneNumber());
+		    pstmt.setDate(7,Date.valueOf(employee.getBirthDate()));
+		    pstmt.setDate(8,Date.valueOf(employee.getWeddingAnniversary()));
+            rowAdded = pstmt.executeUpdate();
+
+		        }​​​​catch(Exception e) {
+			System.out.println(e.getMessage());
+			}​​​​
+         return rowAdded==1;
+
+
+		
+		
+		
+	
+		return false;
+	}
+
+	@Override
+	public List<Employee> getEmployee(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee getEmployeeByID(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean editEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Employee> getEmployeeOfGivenBirthDate(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getEmployeeOfGivenAnniversary(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getAllEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

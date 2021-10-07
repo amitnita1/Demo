@@ -1,0 +1,6 @@
+package com.project.ifaces;
+
+public interface CRUDRepository {
+
+	public boolean addEmployee(Employee employee); ()
+}

@@ -1,0 +1,15 @@
+package com.project.demo;
+
+import java.sql.Connection;
+
+public class EmployeeService {
+	Connection con = null;
+    CRUDRepository repo;
+    public EmployeeService(){
+    	con = DbConnection.getOracleConnection();
+    	repo = new EmployeeDaosImp(con);
+    }
+    public boolean addEmployee(Employee employee) {
+    	return repo.addEmployee(employee);
+    }
+}
